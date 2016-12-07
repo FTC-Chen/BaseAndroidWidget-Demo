@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.emple.dddq.RelativeActivity" >
+
+    <!-- 默认创建activity自带xml之后就是相对布局,
+    	 RelativeLayout按照各子元素之间的位置关系完成布局
+    	 
+    	在此布局中的子元素里与位置相关的属性将生效。例如android：layout_below,  android:layout_above, android:layout_centerVertical等。
+    	注意在指定位置关系时，引用的ID必须在引用之前，先被定义，否则将出现异常。
+      	RelativeLayout是Android五大布局结构中最灵活的一种布局结构，比较适合一些复杂界面的布局。
+     
+     	dimen/activity_horizontal_margin ,有一个类似屏幕边缘的空白, ?距离猜测是10?
+      
+     -->
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_marginLeft="45dp"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="Large Text"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    
+    <!-- 左端对齐 -->
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1" 
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="36dp"
+        android:text="Button" />
+
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/button1"
+        android:layout_marginRight="0dp"
+        android:text="CheckBox" />
+
+</RelativeLayout>

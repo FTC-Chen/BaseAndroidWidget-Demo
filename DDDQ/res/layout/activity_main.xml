@@ -1,0 +1,158 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.emple.dddq.MainActivity" >
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="100dp"
+        android:textSize="20sp"
+        android:ems="10"
+        android:inputType="textPostalAddress" >
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText1"
+        android:layout_toRightOf="@+id/editText1"
+        android:text="+"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/EditText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:textSize="20sp"
+        android:width="100dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/EditText01"
+        android:layout_alignBottom="@+id/EditText01"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:text="计算" />
+
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/EditText01"
+        android:layout_alignTop="@+id/textView1"
+        android:layout_toLeftOf="@+id/button1"
+        android:layout_toRightOf="@+id/EditText2"
+        android:text="="
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/Button02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Button01"
+        android:layout_alignRight="@+id/EditTextRes"
+        android:layout_below="@+id/Button01"
+        android:layout_marginTop="15dp"
+        android:height="12dp"
+        android:text="测试线性布局"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <EditText
+        android:id="@+id/EditTextRes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/button1"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:textSize="20sp"
+        android:width="150dp" />
+
+    <Button
+        android:id="@+id/Button03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Button02"
+        android:layout_toRightOf="@+id/EditTextRes"
+        android:height="12dp"
+        android:text="测试相对布局"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/buttonSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/EditTextRes"
+        android:layout_alignRight="@+id/EditTextRes"
+        android:layout_below="@+id/EditTextRes"
+        android:layout_marginTop="17dp"
+        android:text="跳转传值"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonSkip"
+        android:layout_alignRight="@+id/buttonSkip"
+        android:layout_below="@+id/buttonSkip"
+        android:layout_marginTop="14dp"
+        android:height="12dp"
+        android:text="跳转imgView"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Button04"
+        android:layout_alignBottom="@+id/Button04"
+        android:layout_alignLeft="@+id/Button03"
+        android:layout_alignRight="@+id/Button03"
+        android:height="12dp"
+        android:text="测试表格布局"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Button04"
+        android:layout_alignRight="@+id/Button04"
+        android:layout_below="@+id/Button04"
+        android:height="12dp"
+        android:text="测试Toast界面"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Button02"
+        android:layout_toLeftOf="@+id/Button05"
+        android:height="12dp"
+        android:text="测试单帧布局"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+</RelativeLayout>

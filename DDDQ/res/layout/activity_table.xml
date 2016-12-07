@@ -1,0 +1,149 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.emple.dddq.TableActivity" >
+
+    
+    <!--适用于N行N列的布局格式。一个TableLayout由许多TableRow组成，
+    一个TableRow就代表TableLayout中的一行。 
+    
+     TableRow是LinearLayout的子类，ablelLayout并不需要明确地声明包含多少行、多少列，
+     而是通过TableRow，以及其他组件来控制表格的行数和列数， 
+     TableRow也是容器，因此可以向TableRow里面添加其他组件，没添加一个组件该表格就增加一列。
+     如果想TableLayout里面添加组件，那么该组件就直接占用一行。
+     在表格布局中，列的宽度由该列中最宽的单元格,整个表格布局的宽度取决于父容器的宽度（默认是占满父容器本身）。
+     
+       TableLayout继承了LinearLayout，因此他完全可以支持LinearLayout所支持的全部XML属性，
+       除此之外TableLayout还支持以下属性：
+	1、
+	XML属性：andriod:collapseColumns
+	相关用法：setColumnsCollapsed(int,boolean)
+	说明：设置需要隐藏的列的序列号，多个用逗号隔开
+	2、
+	XML属性：android:shrinkColumns
+	相关用法：setShrinkAllColumns(boolean)
+	说明：设置被收缩的列的序列号，多个用逗号隔开
+	3、
+	XML属性：android:stretchColimns
+	相关用法：setSretchAllColumnds(boolean)
+	说明：设置允许被拉伸的列的序列号，多个用逗号隔开
+	<?xml version="1.0" encoding="utf-8"?> <TableLayout 
+       xmlns:android="http://schemas.android.com/apk/res/android" 
+       android:orientation="vertical" 
+       android:layout_width="fill_parent" 
+       android:layout_height="fill_parent">
+         <TableRow 
+               android:layout_width="fill_parent" 
+               android:layout_height="wrap_content">
+                   <TextView  
+                          android:background="#ffffffff" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="1"/>
+                   <TextView 
+                          android:background="#ff654321" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="2"/>
+                   <TextView  
+                          android:background="#fffedcba" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="3"/>
+        </TableRow>
+        <TableRow 
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content">
+                 <TextView  
+                         android:background="#ff654321" 
+                         android:gravity="center" 
+                         android:padding="10dp" 
+                         android:text="2"/>
+                 <TextView 
+                         android:background="#fffedcba" 
+                         android:gravity="center" 
+                         android:padding="10dp" 
+                         android:text="3"/>
+        </TableRow>
+        <TableRow 
+              android:layout_width="fill_parent" 
+              android:layout_height="wrap_content">
+                   <TextView 
+                          android:background="#fffedcba" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="3"/>
+                  <TextView  
+                          android:background="#ff654321" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="2"/>
+                   <TextView 
+                          android:background="#ffffffff" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="1"/> 
+         </TableRow> 
+</TableLayout>
+     --> 
+     
+     
+         
+    <!-- 布局里面嵌套布局进行使用 能是UI的布局更加方便 -->
+    
+    
+   <TableRow 
+	android:layout_width="fill_parent" 
+	android:layout_height="wrap_content">
+		<TextView  
+		    android:background="#ffffffff" 
+			android:gravity="center" 
+			android:padding="10dp" 
+			android:text="1"/>	
+        <TextView 
+            android:background="#ff654321" 
+			android:gravity="center" 	
+			android:padding="10dp" 
+			android:text="2"/>
+        <TextView  
+            android:background="#fffedcba" 
+            android:gravity="center"
+			android:padding="10dp" 
+			android:text="3"/>
+        </TableRow>
+
+   <TextView
+       android:id="@+id/textView1"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="TextView" />
+
+   <TextView
+       android:id="@+id/textView2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Large Text"
+       android:textAppearance="?android:attr/textAppearanceLarge" />
+   
+    <TableRow 
+              android:layout_width="fill_parent" 
+              android:layout_height="wrap_content">
+                   <TextView 
+                          android:background="#fffedcba" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="3"/>
+                  <TextView  
+                          android:background="#ff654321" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="2"/>
+                   <TextView 
+                          android:background="#ffffffff" 
+                          android:gravity="center" 
+                          android:padding="10dp" 
+                          android:text="1"/> 
+         </TableRow> 
+    
+</TableLayout>
