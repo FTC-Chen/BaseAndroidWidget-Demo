@@ -155,4 +155,17 @@
         android:textSize="14sp"
         android:width="240dp" />
 
+    <Button
+        android:id="@+id/Button07"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Button06"
+        android:layout_alignBottom="@+id/Button06"
+        android:layout_alignLeft="@+id/Button05"
+        android:layout_alignRight="@+id/Button05"
+        android:height="12dp"
+        android:text="测试提交界面"
+        android:textSize="14sp"
+        android:width="240dp" />
+
 </RelativeLayout>
