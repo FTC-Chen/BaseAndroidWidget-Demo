@@ -18,6 +18,9 @@
         android:inputType="textPostalAddress" >
         <requestFocus />
     </EditText>
+    
+    
+    <!-- 测试提交 -->
 
     <TextView
         android:id="@+id/textView1"
