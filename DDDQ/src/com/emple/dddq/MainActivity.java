@@ -1,10 +1,9 @@
 package com.emple.dddq;
 
-import com.emple.dddq.R.string;
-
 import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources.Theme;
 import android.os.Bundle;
 import android.os.IInterface;
 import android.view.Menu;
@@ -70,7 +69,24 @@ public class MainActivity extends Activity {
 		}
 	});
 	
+	//跳转回传值  
+	Button backValueButton = (Button)findViewById(R.id.Button07);
 	
+	backValueButton.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			Intent intent = new Intent(); 
+			intent.setClass(MainActivity.this, BackValueActivity.class);
+			
+			//startActivity(intent);
+			//使用startActivityForResult来启动
+			startActivityForResult(intent, 0);
+		}
+	});
+
+
 	//跳转imgViewbutton
 		Button skipImgButton = (Button)findViewById(R.id.Button01);
 		
@@ -163,10 +179,67 @@ public class MainActivity extends Activity {
 		});
 		
 		
+	//跳转listView界面  Button08
+		Button	ListButton = (Button)findViewById(R.id.Button08);
 		
+		ListButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+					
+			Intent intent = new Intent(); 
+			intent.setClass(MainActivity.this, ListViewActivity.class);
+			startActivity(intent);
+			}
+		});
+	
+	//SimpleCursorAdapter    Button09
+		Button	simpleCurButton = (Button)findViewById(R.id.Button09);
+		
+		simpleCurButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+					
+			Intent intent = new Intent(); 
+			intent.setClass(MainActivity.this, SimpleCurActivity.class);
+			startActivity(intent);
+			}
+		});
+		
+	//SimpleAdapter           Button10	
+		Button	simpleAdButton = (Button)findViewById(R.id.Button10);
+		
+		simpleAdButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+					
+			Intent intent = new Intent(); 
+			intent.setClass(MainActivity.this, SimpleAdActivity.class);
+			startActivity(intent);
+			}
+		});
 
+	//
+		
+	
+		
 	}
 
+	//复写onActivityResult方法 
+    //* 当SecondActivity页面关闭时，接收SecondActiviy页面传递过来的数据。 
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		Bundle bundle = data.getExtras();
+		String param = bundle.getString("param");
+		editRes.setText(param);
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

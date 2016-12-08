@@ -19,8 +19,6 @@
         <requestFocus />
     </EditText>
     
-    
-    <!-- 测试提交 -->
 
     <TextView
         android:id="@+id/textView1"
@@ -162,12 +160,49 @@
         android:id="@+id/Button07"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Button06"
-        android:layout_alignBottom="@+id/Button06"
+        android:layout_alignBaseline="@+id/buttonSkip"
+        android:layout_alignBottom="@+id/buttonSkip"
+        android:layout_alignLeft="@+id/Button03"
+        android:layout_alignRight="@+id/Button03"
+        android:height="12dp"
+        android:text="跳转回传值"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Button06"
+        android:layout_below="@+id/Button06"
+        android:layout_marginTop="13dp"
+        android:layout_toLeftOf="@+id/Button05"
+        android:height="12dp"
+        android:text="跳转简单ListView"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button09"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Button08"
+        android:layout_alignBottom="@+id/Button08"
         android:layout_alignLeft="@+id/Button05"
         android:layout_alignRight="@+id/Button05"
         android:height="12dp"
-        android:text="测试提交界面"
+        android:text="SimpleCursorAdapter"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/Button08"
+        android:layout_below="@+id/Button08"
+        android:height="12dp"
+        android:text="SimpleAdapter"
         android:textSize="14sp"
         android:width="240dp" />
 

@@ -13,5 +13,9 @@
     <string name="title_activity_absolute">AbsoluteActivity</string>
     <string name="title_activity_table">TableActivity</string>
     <string name="title_activity_toast">ToastActivity</string>
+    <string name="title_activity_back_value">BackValueActivity</string>
+    <string name="title_activity_list_view">ListViewActivity</string>
+    <string name="title_activity_simple_cur">SimpleCurActivity</string>
+    <string name="title_activity_simple_ad">SimpleAdActivity</string>
 
 </resources>
