@@ -224,9 +224,35 @@ public class MainActivity extends Activity {
 			}
 		});
 
-	//
+	//跳转xml数据的listView      Button11
+		Button	xmlDataButton = (Button)findViewById(R.id.Button11);
 		
-	
+		xmlDataButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+					
+			Intent intent = new Intent(); 
+			intent.setClass(MainActivity.this, XmlDataActivity.class);
+			startActivity(intent);
+			}
+		});
+		
+	//跳转数据存储的界面    Button12
+		Button dataStoreButton = (Button)findViewById(R.id.Button12);
+		
+		dataStoreButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+					
+			Intent intent = new Intent(); 
+			intent.setClass(MainActivity.this, DataStoredActivity.class);
+			startActivity(intent);
+			}
+		});
 		
 	}
 

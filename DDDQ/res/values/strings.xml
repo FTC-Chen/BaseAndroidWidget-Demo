@@ -17,5 +17,19 @@
     <string name="title_activity_list_view">ListViewActivity</string>
     <string name="title_activity_simple_cur">SimpleCurActivity</string>
     <string name="title_activity_simple_ad">SimpleAdActivity</string>
+    <string name="title_activity_xml_data">XmlDataActivity</string>
+
+    <string-array name="good">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+        <item>d</item>
+        <item>e</item>
+    </string-array>
+
+    <string name="title_activity_data_stored">DataStoredActivity</string>
+    <string name="title_activity_share_pers">SharePersActivity</string>
+    <string name="title_activity_file">FileActivity</string>
+    <string name="title_activity_file_stored">FileStoredActivity</string>
 
 </resources>

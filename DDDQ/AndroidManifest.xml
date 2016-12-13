@@ -73,6 +73,26 @@
             android:name=".SimpleAdActivity"
             android:label="@string/title_activity_simple_ad" >
         </activity>
+        <activity
+            android:name=".XmlDataActivity"
+            android:label="@string/title_activity_xml_data" >
+        </activity>
+        <activity
+            android:name=".DataStoredActivity"
+            android:label="@string/title_activity_data_stored" >
+        </activity>
+        <activity
+            android:name=".SharePersActivity"
+            android:label="@string/title_activity_share_pers" >
+        </activity>
+        <activity
+            android:name=".FileActivity"
+            android:label="@string/title_activity_file" >
+        </activity>
+        <activity
+            android:name=".FileStoredActivity"
+            android:label="@string/title_activity_file_stored" >
+        </activity>
     </application>
 
 </manifest>

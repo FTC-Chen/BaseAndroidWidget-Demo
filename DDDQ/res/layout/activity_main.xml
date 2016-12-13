@@ -108,19 +108,6 @@
         android:textSize="14sp" />
 
     <Button
-        android:id="@+id/Button01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonSkip"
-        android:layout_alignRight="@+id/buttonSkip"
-        android:layout_below="@+id/buttonSkip"
-        android:layout_marginTop="14dp"
-        android:height="12dp"
-        android:text="跳转imgView"
-        android:textSize="14sp"
-        android:width="240dp" />
-
-    <Button
         android:id="@+id/Button05"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -170,40 +157,73 @@
         android:width="240dp" />
 
     <Button
-        android:id="@+id/Button08"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/Button06"
-        android:layout_below="@+id/Button06"
-        android:layout_marginTop="13dp"
-        android:layout_toLeftOf="@+id/Button05"
-        android:height="12dp"
-        android:text="跳转简单ListView"
-        android:textSize="14sp"
-        android:width="240dp" />
-
-    <Button
         android:id="@+id/Button09"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Button08"
-        android:layout_alignBottom="@+id/Button08"
-        android:layout_alignLeft="@+id/Button05"
-        android:layout_alignRight="@+id/Button05"
+        android:layout_alignLeft="@+id/Button08"
+        android:layout_alignRight="@+id/Button08"
+        android:layout_below="@+id/Button08"
         android:height="12dp"
         android:text="SimpleCursorAdapter"
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:width="240dp" />
 
     <Button
         android:id="@+id/Button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/Button08"
-        android:layout_below="@+id/Button08"
+        android:layout_alignLeft="@+id/Button05"
+        android:layout_alignTop="@+id/Button09"
         android:height="12dp"
         android:text="SimpleAdapter"
         android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Button09"
+        android:layout_alignLeft="@+id/Button10"
+        android:layout_alignRight="@+id/Button10"
+        android:height="12dp"
+        android:text="xml数据ListView"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button08"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Button06"
+        android:layout_marginTop="11dp"
+        android:layout_toLeftOf="@+id/Button10"
+        android:height="12dp"
+        android:text="简单array数据ListView"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonSkip"
+        android:layout_marginTop="12dp"
+        android:layout_toLeftOf="@+id/Button07"
+        android:height="12dp"
+        android:text="跳转imgView"
+        android:textSize="14sp"
+        android:width="240dp" />
+
+    <Button
+        android:id="@+id/Button12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/Button10"
+        android:height="12dp"
+        android:text="多种数据存储方式"
+        android:textSize="13sp"
         android:width="240dp" />
 
 </RelativeLayout>

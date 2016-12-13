@@ -1,12 +1,16 @@
 package com.emple.dddq;
 
 import java.util.ArrayList;
+
 import java.util.HashMap;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Gallery;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -17,6 +21,7 @@ public class SimpleAdActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_simple_ad);
+		
 		//绑定Layout里面的ListView  
         ListView list = (ListView) findViewById(R.id.ListView01);  
         //list.setLayoutParams(new Gallery.LayoutParams(50,50));
@@ -37,9 +42,9 @@ public class SimpleAdActivity extends Activity {
         							R.layout.simpleadlist, 
         							new String[]{"ItemImage","ItemTitle","ItemText"}, 
         							new int[] {R.id.ItemImage,R.id.ItemTitle,R.id.ItemText});
-        
         //添加并且显示  
-        list.setAdapter(listAdapter);  
+        list.setAdapter(listAdapter); 
+        
 	}
 
 	@Override
