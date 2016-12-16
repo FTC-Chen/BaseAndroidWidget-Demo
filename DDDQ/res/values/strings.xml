@@ -31,5 +31,6 @@
     <string name="title_activity_share_pers">SharePersActivity</string>
     <string name="title_activity_file">FileActivity</string>
     <string name="title_activity_file_stored">FileStoredActivity</string>
+    <string name="title_activity_file_sd_card">FileSdCardActivity</string>
 
 </resources>

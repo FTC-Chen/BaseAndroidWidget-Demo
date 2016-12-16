@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.emple.dddq.FileStoredActivity" >
+    tools:context="com.emple.dddq.FileSdCardActivity" >
 
     <EditText
         android:id="@+id/editText1"
@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="20dp"
         android:ems="10" >
 
         <requestFocus />
@@ -28,8 +28,8 @@
         android:layout_alignLeft="@+id/editText1"
         android:layout_alignRight="@+id/editText1"
         android:layout_below="@+id/editText1"
-        android:layout_marginTop="37dp"
-        android:text="设置File存储数据" />
+        android:layout_marginTop="24dp"
+        android:text="存储sdCard数据" />
 
     <Button
         android:id="@+id/Button01"
@@ -38,7 +38,7 @@
         android:layout_alignLeft="@+id/button1"
         android:layout_alignRight="@+id/button1"
         android:layout_below="@+id/button1"
-        android:layout_marginTop="25dp"
-        android:text="获取File存储数据" />
-    
+        android:layout_marginTop="17dp"
+        android:text="读取sdCard数据" />
+
 </RelativeLayout>

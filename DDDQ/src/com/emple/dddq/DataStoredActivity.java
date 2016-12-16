@@ -55,6 +55,20 @@ public class DataStoredActivity extends Activity {
 			}
 		});
 		
+		//文件存储2:存储SD卡上的数据   Button02
+		Button fielSdCardButton = (Button)findViewById(R.id.Button02);
+		
+		fielSdCardButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+					
+			Intent intent = new Intent(); 
+			intent.setClass(DataStoredActivity.this, FileSdCardActivity.class);
+			startActivity(intent);
+			}
+		});
 		
 	}
 
