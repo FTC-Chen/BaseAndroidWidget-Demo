@@ -32,5 +32,7 @@
     <string name="title_activity_file">FileActivity</string>
     <string name="title_activity_file_stored">FileStoredActivity</string>
     <string name="title_activity_file_sd_card">FileSdCardActivity</string>
+    <string name="title_activity_sq">SqActivity</string>
+    <string name="title_activity_sqlite">SqliteActivity</string>
 
 </resources>

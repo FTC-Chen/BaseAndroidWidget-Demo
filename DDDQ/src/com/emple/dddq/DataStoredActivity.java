@@ -70,6 +70,23 @@ public class DataStoredActivity extends Activity {
 			}
 		});
 		
+		//SQLite数据库存储数据        Button03
+		Button sqliteButton = (Button)findViewById(R.id.Button03);
+		
+		sqliteButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+					
+			Intent intent = new Intent(); 
+			intent.setClass(DataStoredActivity.this, SqliteActivity.class);
+			startActivity(intent);
+			}
+		});
+		
+		
+		
 	}
 
 	@Override

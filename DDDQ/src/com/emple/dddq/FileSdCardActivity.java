@@ -120,7 +120,9 @@ public class FileSdCardActivity extends Activity {
 		try {
 			
 			//如果手机插入了sd卡,而且应用程序有访问sd卡的权限
-			if (Environment.getExternalStorageDirectory().equals(Environment.MEDIA_MOUNTED)) {
+			if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+		
+				Log.w(ACTIVITY_TAG, "应用程序有sd卡");
 				
 				 File file = new File(Environment.getExternalStorageDirectory()  
 	                        .getCanonicalPath() + FILE_NAME);  
@@ -139,6 +141,9 @@ public class FileSdCardActivity extends Activity {
 	                }else {
 	                	 Toast.makeText(this, "该目录下文件不存在", Toast.LENGTH_LONG).show();  
 					}  
+			}else{
+					
+				Log.w(ACTIVITY_TAG, "应用程序没有检测到sd卡");	
 			}
 			
 		} catch (Exception e) {
