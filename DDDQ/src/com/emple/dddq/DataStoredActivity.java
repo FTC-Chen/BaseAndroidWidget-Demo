@@ -85,7 +85,20 @@ public class DataStoredActivity extends Activity {
 			}
 		});
 		
+		//ContentProvider存储数据 Button04
+		Button contProButton = (Button)findViewById(R.id.Button04);
 		
+		contProButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub
+					
+			Intent intent = new Intent(); 
+			intent.setClass(DataStoredActivity.this, ContenProActivity.class);
+			startActivity(intent);
+			}
+		});
 		
 	}
 

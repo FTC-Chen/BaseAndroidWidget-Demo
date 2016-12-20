@@ -34,5 +34,6 @@
     <string name="title_activity_file_sd_card">FileSdCardActivity</string>
     <string name="title_activity_sq">SqActivity</string>
     <string name="title_activity_sqlite">SqliteActivity</string>
+    <string name="title_activity_conten_pro">ContenProActivity</string>
 
 </resources>

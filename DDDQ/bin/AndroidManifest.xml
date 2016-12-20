@@ -107,6 +107,12 @@
             android:name=".SqliteActivity"
             android:label="@string/title_activity_sqlite" >
         </activity>
+        <activity
+            android:name=".ContenProActivity"
+            android:label="@string/title_activity_conten_pro" >
+        </activity> 
+        
     </application>
+    
 
 </manifest>
