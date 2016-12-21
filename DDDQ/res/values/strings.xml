@@ -35,5 +35,6 @@
     <string name="title_activity_sq">SqActivity</string>
     <string name="title_activity_sqlite">SqliteActivity</string>
     <string name="title_activity_conten_pro">ContenProActivity</string>
+    <string name="title_activity_data_http">DataHttpActivity</string>
 
 </resources>

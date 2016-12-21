@@ -100,6 +100,20 @@ public class DataStoredActivity extends Activity {
 			}
 		});
 		
+		//网络存储数据			Button05
+		Button httpStoredButton = (Button)findViewById(R.id.Button05);
+		
+		httpStoredButton.setOnClickListener(new OnClickListener() {
+					
+			@Override
+			public void onClick(View v) {
+			// TODO Auto-generated method stub		
+			Intent intent = new Intent(); 
+			intent.setClass(DataStoredActivity.this, DataHttpActivity.class);
+			startActivity(intent);
+			}
+		});
+		
 	}
 
 	@Override

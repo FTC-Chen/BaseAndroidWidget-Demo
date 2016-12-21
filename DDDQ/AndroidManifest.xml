@@ -8,6 +8,9 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="20" />
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.READ_CONTACTS" >
     </uses-permission>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
@@ -110,9 +113,11 @@
         <activity
             android:name=".ContenProActivity"
             android:label="@string/title_activity_conten_pro" >
-        </activity> 
-        
+        </activity>
+        <activity
+            android:name=".DataHttpActivity"
+            android:label="@string/title_activity_data_http" >
+        </activity>
     </application>
-    
 
 </manifest>
