@@ -219,10 +219,11 @@
         android:id="@+id/Button12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Button09"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/Button10"
+        android:layout_alignRight="@+id/EditText2"
         android:height="12dp"
-        android:text="多种数据存储方式"
+        android:text="多种数据存储方式 / 网络请求"
         android:textSize="13sp"
         android:width="240dp" />
 

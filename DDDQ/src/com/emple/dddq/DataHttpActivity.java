@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import okhttp3.OkHttpClient;
@@ -33,6 +34,11 @@ public class DataHttpActivity extends Activity implements View.OnClickListener{
 
 	private Button bt_get;
     private Button bt_post;
+    
+    private TextView nameTextView;
+    private TextView gnameTextView;
+    private TextView uidTextView;
+    
     
     UserInfomation userInfo;
 
@@ -105,6 +111,10 @@ public class DataHttpActivity extends Activity implements View.OnClickListener{
 		 bt_get=(Button)findViewById(R.id.get);
 		 bt_post=(Button)findViewById(R.id.post);
 		 
+		 nameTextView =(TextView)findViewById(R.id.textView2);
+		 gnameTextView =(TextView)findViewById(R.id.TextView03);
+		 uidTextView =(TextView)findViewById(R.id.TextView05);
+		
 		 bt_get.setOnClickListener(this);  
 		 bt_post.setOnClickListener(this); 
 		 
@@ -266,6 +276,17 @@ public class DataHttpActivity extends Activity implements View.OnClickListener{
 //        
 //		}).start();
 	}
+	
+	/* 1、内部嵌套的类必须是static的，要不然解析会出错；
+       2、类里面的属性名必须跟Json字段里面的Key是一模一样的；
+	   3、内部嵌套的用[]括起来的部分是一个List，所以定义为 public List<B> b，而只用{}嵌套的就定义为 public C c，
+          具体的大家对照Json字符串看看就明白了
+       Gson gson = new Gson();
+	   java.lang.reflect.Type type = new TypeToken<JsonBean>() {}.getType();
+       JsonBean jsonBean = gson.fromJson(json, type);
+       然后想拿数据就很简单啦，直接在jsonBean里面取就可以了！
+       如果需要解析的Json嵌套了很多层，同样可以可以定义一个嵌套很多层内部类的Bean，需要细心的对照Json字段来定义
+	 * */
 
 	 private void getData() {
 		 	
@@ -313,21 +334,20 @@ public class DataHttpActivity extends Activity implements View.OnClickListener{
 					
 					userInfo = gson.fromJson(res, UserInfomation.class);
 					
-					
 					DataHttpActivity.this.runOnUiThread(new Runnable() {
 						@Override
 			                public void run() {    
 							
-							Log.v("WY","----用户名:"+userInfo.getMessagemodel().getName());
+							Log.i("WY","----用户名:"+userInfo.getMessagemodel().getName());
 							
+							nameTextView.setText(userInfo.getMessagemodel().getName());
+							
+							gnameTextView.setText(userInfo.getMessagemodel().getUser_gname());
+							
+							uidTextView.setText(userInfo.getMessagemodel().getUid());
 			                }
 			            });
-					 //打印看结果
-//					Log.v("WY","----用户名:"+userInfo.getData().getName());
-//	            
-//					Log.i("WY","----部门:"+userInfo.getData().getUser_gname());
-//	            
-//					Log.i("WY","----uid:"+userInfo.getData().getUid());   		
+		
 				}
 			
 			
