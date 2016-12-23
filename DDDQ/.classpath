@@ -3,7 +3,7 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/Http_oK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="lib" path="/Users/anyongxue/Downloads/android-sdk-macosx/platforms/android-19/android.jar" sourcepath="/Users/anyongxue/Downloads/android-sdk-macosx/sources/android-19">
 		<attributes>
 			<attribute name="javadoc_location" value="file:/Users/anyongxue/Downloads/android-sdk-macosx/docs/reference"/>
@@ -22,5 +22,13 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="/Users/anyongxue/Downloads/android-sdk-macosx/platforms/android-23/android.jar" sourcepath="/Users/anyongxue/Downloads/android-sdk-macosx/sources/android-23">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/Users/anyongxue/Downloads/android-sdk-macosx/docs/reference"/>
+		</attributes>
+		<accessrules>
+			<accessrule kind="nonaccessible" pattern="com/android/internal/**"/>
+		</accessrules>
+	</classpathentry>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

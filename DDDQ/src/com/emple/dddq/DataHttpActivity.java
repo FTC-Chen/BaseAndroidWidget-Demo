@@ -1,12 +1,17 @@
 package com.emple.dddq;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.MemoryHandler;
+
+import com.emple.bean.UserInfomation;
+import com.google.gson.Gson;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.renderscript.Type;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,8 +33,12 @@ public class DataHttpActivity extends Activity implements View.OnClickListener{
 
 	private Button bt_get;
     private Button bt_post;
+    
+    UserInfomation userInfo;
 
     final OkHttpClient client = new OkHttpClient();
+    
+    public Handler handler = new Handler();
     
     public Handler MHandler = new Handler(){
 	  
@@ -98,7 +107,7 @@ public class DataHttpActivity extends Activity implements View.OnClickListener{
 		 
 		 bt_get.setOnClickListener(this);  
 		 bt_post.setOnClickListener(this); 
-		
+		 
 	}
 
 	@Override
@@ -185,6 +194,7 @@ public class DataHttpActivity extends Activity implements View.OnClickListener{
 	
 	
 	//post --------------登录
+	//http://www.cnblogs.com/whoislcj/p/5526431.html
 	private void postRequest() {
 			
 		Log.i("WY","此处点击post");
@@ -206,43 +216,125 @@ public class DataHttpActivity extends Activity implements View.OnClickListener{
     	Response response = client.newCall(request).execute();
 		 * */
 
-		FormBody body = new FormBody.Builder()
-		     	.add("name", "zpl")
-		     	.add("Password", "aaaa")
-		     	.build();
 		
-		final Request request = new Request.Builder()
-	                .url("http://elv.sunac.com.cn:8084/api/Login/POST")
-	                .post(body)
-	                .build();
+		 handler.postDelayed(new Runnable() {
+	            @Override
+	            public void run() {
+	                    
+	            	getData();
+	            }
+	        }, 100);
 
-		new Thread(new Runnable() {
-            @Override
-            public void run() {
-                Response response = null;
-                try {
-                    response = client.newCall(request).execute();
-                    if (response.isSuccessful()) {
-                    	Log.i("WY","请求成功");
-                    	
-                        Log.i("WY","打印POST响应的数据：" + response.body().string());
-                        
-                    } else {
-                    	Log.i("WY","请求失败");
-                    	
-                        throw new IOException("Unexpected code " + response);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    
-                    Log.i("WY","错误了2222222");
-                }
-            }
-        
-		}).start();
+//		new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                Response response = null;
+//                try {
+//                    response = client.newCall(request).execute();
+//                    
+//                    if (response.isSuccessful()) {
+//                    	Log.i("WY","请求成功");
+//                    	
+//                        Log.i("WY","打印POST响应的数据：" + response.body().string()); 
+//   
+//                        //String res = response.body().string();
+//                        
+//                        //json解析 使用Gson
+//                        //http://www.jb51.net/article/32547.htm
+//                       // Gson gson = new Gson(); 
+//                        
+//                        //UserInfomation userInfo = gson.fromJson(res, UserInfomation.class);
+//                        
+//                        //List<UserInfomation.ResultsBean> results = userInfo.getResults();
+//                        
+//                        //打印看结果
+////                        Log.i("WY","----用户名:"+userInfo.getData().getName());
+////                        
+////                        Log.i("WY","----部门:"+userInfo.getData().getUser_gname());
+////                        
+////                        Log.i("WY","----uid:"+userInfo.getData().getUid());   
+//                    } else {
+//                    	Log.i("WY","请求失败");
+//                    	
+//                        throw new IOException("Unexpected code " + response);
+//                    }
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                    Log.i("WY","错误了2222222");
+//                }
+//            }
+//        
+//		}).start();
 	}
-	
-	
+
+	 private void getData() {
+		 	
+		 FormBody body = new FormBody.Builder()
+				 .add("name", "zpl")
+				 .add("Password", "aaaa")
+				 .build();
+			
+		 final Request request = new Request.Builder()
+				 .url("http://elv.sunac.com.cn:8084/api/Login/POST")
+				 .post(body)
+				 .build();
+			
+		 //http://www.jianshu.com/p/48b2aab0efc1  此链接方法
+		 //通过request的对象去构造得到一个Call对象，请求加入调度
+		 client.newCall(request).enqueue(new Callback() {
+				
+			 @Override
+			 public void onFailure(Call arg0, IOException arg1) {
+				 // TODO Auto-generated method stub
+					
+				 DataHttpActivity.this.runOnUiThread(new Runnable() {
+					 @Override
+					 public void run() {
+							
+							Toast.makeText(DataHttpActivity.this, "网络连接失败", Toast.LENGTH_SHORT).show();
+						}
+					});
+				}
+			
+				//成功方法
+				@Override
+				public void onResponse(Call call, Response response) throws IOException {
+					// TODO Auto-generated method stub
+					
+					if (!response.isSuccessful()) {
+		                throw new IOException("Unexpected code " + response);
+		            }
+					//返回数据
+					String res = response.body().string();
+					Log.v("te::","-------返回数据"+res);
+			          
+					//解析json
+					Gson gson = new Gson(); 
+					
+					userInfo = gson.fromJson(res, UserInfomation.class);
+					
+					
+					DataHttpActivity.this.runOnUiThread(new Runnable() {
+						@Override
+			                public void run() {    
+							
+							Log.v("WY","----用户名:"+userInfo.getMessagemodel().getName());
+							
+			                }
+			            });
+					 //打印看结果
+//					Log.v("WY","----用户名:"+userInfo.getData().getName());
+//	            
+//					Log.i("WY","----部门:"+userInfo.getData().getUser_gname());
+//	            
+//					Log.i("WY","----uid:"+userInfo.getData().getUid());   		
+				}
+			
+			
+			});
+
+		 
+	 }
 	
 	//请求成功 调用的方法 
 	private void showMToast() {
